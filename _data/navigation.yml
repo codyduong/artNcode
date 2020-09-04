@@ -1,4 +1,5 @@
 - name: Home
   link: /artNcode/
-- name: About
-  link: /artNcode/about.html
+  
+- name: Portfolio
+  link: /artNcode/Portfolio.html 
