@@ -3,7 +3,7 @@
 # Site Settings
 title: Cody Duong | artNcode
 url: 'https://cody-duong.github.io'
-#baseurl: '/artNcode' #change it according to your repository name
+baseurl: '/artNcode' #change it according to your repository name
 description: Currently under construction. Mostly useful though.
 
 # Tracker
