@@ -8,7 +8,7 @@
   <body>
     {% include navigation.html %}
     <div class="grid-container">
-    {% for item in site.data.portfolio %}
+    {% for item in site.data.portfolio.portfolio %}
       <div class="grid-item">
         <img src="/_data/portfolio/img/{{ item.img }}" alt="img404"><a href="{{ item.link }}"></a></img>
       </div>
