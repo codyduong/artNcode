@@ -10,7 +10,7 @@
     <div class="grid-container">
     {% for item in site.data.portfolio %}
       <div class="grid-item">
-        <img src={{ item.img }} alt="img404"></img>
+        <img src="/data/portfolio/img/{{ item.img }}" alt="img404"><a href="{{ item.link }}"></a></img>
       </div>
     {% endfor %}
     </div>
