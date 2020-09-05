@@ -27,3 +27,5 @@ compress_html: # - http://jch.penibelst.de/
 port: 4000
 #host: 127.0.0.1
 safe: false
+
+theme: jekyll-theme-cayman
