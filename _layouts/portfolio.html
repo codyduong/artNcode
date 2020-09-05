@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <!--<link rel="stylesheet" href="/assets/css/styles.css">-->
+  </head>
+  <body>
+    {% include navigation.html %}
+    <div class="grid-container">
+      {% for item in site.data.portfolio %}
+      <div class="grid-item">
+        <img src="/assets/images/{{ item.img }}" alt="img404">
+		  <!--<a href="{{ item.link }}"></a>-->
+		</img>
+      </div>
+      {% endfor %}
+    </div>
+    {{ content }}
+  </body>
+</html>

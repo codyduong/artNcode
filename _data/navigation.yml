@@ -1,0 +1,8 @@
+- name: Home
+  link: /artNcode/
+  
+- name: Portfolio
+  link: /artNcode/portfolio.html 
+  
+- name: Contact Me
+  link: /artNcode/contact.html
