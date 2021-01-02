@@ -12,3 +12,5 @@ Commissions are currently closed :(
 <h3> Portfolio </h3>
 A selection of the works displaying the variety of my work throughout time.
 
+<br>
+<br>

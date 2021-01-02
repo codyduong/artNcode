@@ -6,7 +6,7 @@ permalink: /home/
 ---
 
 Welcome. Here I host my personal and professional work. I'm a self-taught programmer and
-3D Printing, Digital Art, and 3D modelling hobbyist.
+a 3D Printing, Digital Art, and 3D modelling hobbyist.
 
 
 I hodge-podged this website together using Jekyll and my limited knowledge of HTML, JS, and CSS.
