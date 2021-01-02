@@ -33,8 +33,7 @@ layout: default
 	<div class="flex-container">
 		{%- for work in site.data.art.arts -%}
 			<div>
-				{% assign url = "{{work.src | escape}}" %}
-				<img src = url alt="{{work.title}}">
+				<img src = {{work.src}} alt="{{work.title}}">
 			</div>
 		{% else %}
 			<div>Something broke... Please tell me so I can fix it!</div>
