@@ -33,7 +33,7 @@ layout: default
 	<div class="flex-container">
 		{%- for work in site.data.art.arts -%}
 			<div>
-				<img src = "{{work.source}}" alt="{{work.title}}">
+				<img src = "{{work.source | relative_url}}" alt="{{work.title}}">
 			</div>
 		{% else %}
 			<div>Something broke... Please tell me so I can fix it!</div>

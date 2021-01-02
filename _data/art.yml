@@ -1,28 +1,28 @@
 arts:
 
 - title: 33
-  source: "../assets/art/33.png"
+  source: "/assets/art/33.png"
 
 - title: catjail
-  source: "../assets/art/catjail.png"
+  source: "/assets/art/catjail.png"
 
 - title: LEC
-  source: "../assets/art/LEC.png"
+  source: "/assets/art/LEC.png"
   
 - title: coyote
-  source: "../assets/art/coyote.png"
+  source: "/assets/art/coyote.png"
 
 - title: Weather Report
-  source: "../assets/art/weatherreport.png"
+  source: "/assets/art/weatherreport.png"
 
 - title: Gomenasai
-  source: "../assets/art/gomenasai.png"
+  source: "/assets/art/gomenasai.png"
   
 - title: Scene
-  source: "../assets/art/scene.png"
+  source: "/assets/art/scene.png"
   
 - title: Yordle
-  source: "../assets/art/yordle.png"
+  source: "/assets/art/yordle.png"
   
 - title: Kamikare
-  source: "../assets/art/kamikare.png"
+  source: "/assets/art/kamikare.png"
