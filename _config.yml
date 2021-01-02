@@ -1,31 +1,57 @@
-#Update all the sections by editing the data.yml file inside _data folder.
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 
-# Site Settings
-title: Cody Duong | artNcode
-url: 'https://cody-duong.github.io'
-baseurl: '/artNcode' #change it according to your repository name
-description: Currently under construction. Mostly useful though.
-
-# Tracker
-#analytics: UA-83979019-1
-
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+title: artNcode
+author: Cody Duong
+email: codyqd@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  this is where i am building and making things.
+  enjoy your stay.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+#twitter_username: 
+github_username: codyduong
+#youtube_username: 
 
 # Build settings
-compress-site: yes
+theme: minima
+plugins:
+  - jekyll-sitemap
+  - jekyll-email-protect
 
-encoding: "utf-8"
-compress_html: # - http://jch.penibelst.de/
-  clippings: all
-  ignore:
-    envs: development
-
-# Development Settings
-port: 4000
-#host: 127.0.0.1
-safe: false
-
-theme: jekyll-theme-cayman
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
