@@ -9,5 +9,5 @@ Welcome to the art page.
 <h3> Commissions </h3>
 Commissions are currently closed :(
 
-<h3> Portfolio </h3>
+<h3> Artwork Showcase </h3>
 A selection of the works displaying the variety of my work throughout time.
