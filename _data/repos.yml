@@ -7,16 +7,10 @@ repos:
   languages:
     - name: Python
       color: '#3572A5'
-      percent: 100.0%
-    - name: 
-      color: 
-      percent: 0%
-    - name: 
-      color: 
-      percent: 0%
+      percent: 100.0
     - name: Other
       color: white
-      percent: 0%
+      percent: 0
   created: Jan 03, 2021
   updated: Jan 06, 2021
 
@@ -27,16 +21,16 @@ repos:
   languages:
     - name: SCSS
       color: '#c6538c'
-      percent: 58.04%
+      percent: 58.04
     - name: HTML
       color: '#e34c26'
-      percent: 33.0%
+      percent: 33.0
     - name: Ruby
       color: '#701516'
-      percent: 8.11%
+      percent: 8.11
     - name: Other
       color: white
-      percent: 0.85%
+      percent: 0.85
   created: Sep 04, 2020
-  updated: Jan 06, 2021
+  updated: Jan 07, 2021
 
