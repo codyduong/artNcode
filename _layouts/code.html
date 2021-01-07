@@ -39,7 +39,7 @@ layout: default
               <div style="width:100%; height: 15px; display: block; white-space: nowrap; font-size: 0px">
                 {% for item in work.languages %}
                   {% if item.percent != '0%' %}
-                    <span title="{{item.name}} {{item.percent}}"><div style="background-color: {{item.color | escape}}; height: 100%; width: {{item.percent | append: '%'}}; display: inline-block"></div></span>
+                    <span title="{{item.name}} {{item.percent | append: '%'}}"><div style="background-color: {{item.color | escape}}; height: 100%; width: {{item.percent | append: '%'}}; display: inline-block"></div></span>
                   {% endif %}
                 {% endfor %}
               </div>
