@@ -8,11 +8,10 @@ repos:
     - name: Python
       color: '#3572A5'
       percent: 100.0
-    - name: Other
-      color: white
-      percent: 0
+  languages_other_percent: 0
+  languages_other:
   created: Jan 03, 2021
-  updated: Jan 07, 2021
+  updated: Jan 08, 2021
 
 - name: artNcode
   private: False
@@ -31,9 +30,8 @@ repos:
     - name: Shell
       color: '#89e051'
       percent: 0.85
-    - name: Other
-      color: white
-      percent: 0
+  languages_other_percent: 0
+  languages_other:
   created: Sep 04, 2020
   updated: Jan 07, 2021
 
