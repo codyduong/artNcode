@@ -2,60 +2,68 @@
 layout: default
 ---
 <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-  </header>
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title | escape }}</h1>
+    </header>
 
-  <div class="post-content">
-    {{ content }}
-  </div>
+    <div class="post-content">
+        {{ content }}
+    </div>
 </article>
 
 <article class="custom">
-  <div class="post-work">
-    <style>
-      .flex-container {
-        display: flex;
-        flex-flow: column wrap;
-        /*align-items: center;*/
-        align-content: space-around;
-      }
+    <div class="post-work">
+        <style>
+            .flex-container {
+                display: flex;
+                flex-flow: column nowrap;
+                /*align-items: center;*/
+                align-content: space-around;
+            }
 
-      .flex-container > div {
-        width: 100%;
-        margin: 0px;
-        text-align: center;
-        max-width: 400px;
-        max-height: 400px;
-	  }
-    </style>
+            .flex-container>div {
+                width: 100%;
+                margin: 0px;
+                text-align: center;
+                max-width: 400px;
+                max-height: 400px;
+            }
+        </style>
 
-    <div class = "flex-container" id = "repoContainer">
-      </div>
+        <div class="flex-container" id="repoContainer">
+        </div>
         {% for work in site.data.repos.repos %}
-            <!--This part is entirely in Liquid as opposed to JS because JS in a Liquid loop is weird... And I couldn't be bothered.-->
-            <div id="{{work.name}}">
-              <h1><a href="{{work.permalink}}" title="Github Repository">{{work.name | escape}}</a></h1>
-              <div style="width:100%; height: 15px; display: block; white-space: nowrap; font-size: 0px">
+        <div id="{{work.name}}">
+            <h1><a href="{{work.permalink}}" title="Github Repository">{{work.name | escape}}</a></h1>
+            <h3 style=>Languages</h3>
+            <div style="width:100%; height: 15px; display: block; white-space: nowrap; font-size: 0px" id="bar">
                 {% for item in work.languages %}
-                  {% if item.percent != '0%' %}
-                    <span title="{{item.name}} {{item.percent | append: '%'}}"><div style="background-color: {{item.color | escape}}; height: 100%; width: {{item.percent | append: '%'}}; display: inline-block"></div></span>
-                  {% endif %}
+                {% if item.percent != '0%' %}
+                <span title="{{item.name}} {{item.percent | append: '%'}}">
+                    <div style="background-color: {{item.color | escape}}; height: 100%; width: {{item.percent | append: '%'}}; display: inline-block">
+                    </div>
+                </span>
+                {% endif %}
                 {% endfor %}
-              </div>
-              <br>
-              {{work.description}} <br>
-              
-              <br>
-              Updated on: {{work.updated}}<br>
-              Created on: {{work.created}}
-              <br>
-              <br>
-              <br>
+                <span title="Other {{work.languages_other_percent | append: '%'}}">
+                    <div style="background-color: white; height: 100%; width: {{work.languages_other_percent | append: '%'}}; display: inline-block">
+                    </div>
+                </span>
             </div>
+            <div>
+                <br>
+                {{work.description}} <br>
+                <br>
+                Updated on: {{work.updated}}<br>
+                Created on: {{work.created}}
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
         {% endfor %}
-      </div>
     </div>
-  </div>
+    </div>
+    </div>
 </article>
 
