@@ -32,30 +32,30 @@ layout: default
 
         <div class="flex-container" id="repoContainer">
         </div>
-        {% for work in site.data.repos.repos %}
-        <div id="{{work.name}}">
-            <h1><a href="{{work.permalink}}" title="Github Repository">{{work.name | escape}}</a></h1>
-            <h3 style=>Languages</h3>
+        {% for repo in site.data.repos.repos %}
+        <div id="{{repo.name}}">
+            <h1><a href="{{repo.permalink}}" title="Github Repository">{{repo.name | escape}}</a></h1>
+            <h3>Languages</h3>
             <div style="width:100%; height: 15px; display: block; white-space: nowrap; font-size: 0px" id="bar">
-                {% for item in work.languages %}
-                {% if item.percent != '0%' %}
-                <span title="{{item.name}} {{item.percent | append: '%'}}">
-                    <div style="background-color: {{item.color | escape}}; height: 100%; width: {{item.percent | append: '%'}}; display: inline-block">
+                {% for lang in repo.languages %}
+                {% if lang.percent != '0%' %}
+                <span title="{{lang.name}} {{lang.percent | append: '%'}}" id="{{lang.name}}">
+                    <div style="background-color: {{lang.color | escape}}; height: 100%; width: {{lang.percent | append: '%'}}; display: inline-block" id="{{lang.name | append: '_bar'}}">
                     </div>
                 </span>
                 {% endif %}
                 {% endfor %}
-                <span title="Other {{work.languages_other_percent | append: '%'}}">
-                    <div style="background-color: white; height: 100%; width: {{work.languages_other_percent | append: '%'}}; display: inline-block">
+                <span title="Other {{repo.languages_other_percent | append: '%'}}" id="other">
+                    <div style="background-color: white; height: 100%; width: {{repo.languages_other_percent | append: '%'}}; display: inline-block" id="other_bar">
                     </div>
                 </span>
             </div>
             <div>
                 <br>
-                {{work.description}} <br>
+                {{repo.description}} <br>
                 <br>
-                Updated on: {{work.updated}}<br>
-                Created on: {{work.created}}
+                Updated on: {{repo.updated}}<br>
+                Created on: {{repo.created}}
                 <br>
                 <br>
                 <br>
@@ -69,11 +69,12 @@ layout: default
 
 
 <script>
-    import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
     const { Octokit } = require("@octokit/rest");
     const octokit = new Octokit({
-        auth: "{{site.data.auth.token}}"
+        auth: "{{site.data.auth.token}}",
+        userAgent: "artNcode",
+        timeZone: 'America/Chicago' //https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
     })
-
     
+    //idk the plan here is hopefully to automatically update repo information. But I have no idea what im doing...
 </script>
