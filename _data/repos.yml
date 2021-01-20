@@ -11,7 +11,7 @@ repos:
   languages_other_percent: 0
   languages_other:
   created: Jan 03, 2021
-  updated: Jan 08, 2021
+  updated: Jan 16, 2021
 
 - name: artNcode
   private: False
@@ -20,18 +20,31 @@ repos:
   languages:
     - name: SCSS
       color: '#c6538c'
-      percent: 58.0
+      percent: 56.66
     - name: HTML
       color: '#e34c26'
-      percent: 33.04
+      percent: 34.59
     - name: Ruby
       color: '#701516'
-      percent: 8.1
+      percent: 7.92
     - name: Shell
       color: '#89e051'
-      percent: 0.85
+      percent: 0.83
   languages_other_percent: 0
   languages_other:
   created: Sep 04, 2020
-  updated: Jan 07, 2021
+  updated: Jan 16, 2021
+
+- name: FTC9108-SkyStone
+  private: False
+  permalink: https://github.com/codyduong/FTC9108-SkyStone
+  description: FTC9108 Code (2019-2020 SkyStone)
+  languages:
+    - name: Java
+      color: '#b07219'
+      percent: 100.0
+  languages_other_percent: 0
+  languages_other:
+  created: Oct 16, 2019
+  updated: Dec 17, 2019
 
