@@ -1,18 +1,5 @@
 repos:
 
-- name: aNc_pyRequest
-  private: False
-  permalink: https://github.com/codyduong/aNc_pyRequest
-  description: A personal tool used to access GitHub's REST API and use it to create YML for the artNcode repository.
-  languages:
-    - name: Python
-      color: '#3572A5'
-      percent: 100.0
-  languages_other_percent: 0
-  languages_other:
-  created: Jan 03, 2021
-  updated: Jan 16, 2021
-
 - name: artNcode
   private: False
   permalink: https://github.com/codyduong/artNcode
@@ -33,7 +20,7 @@ repos:
   languages_other_percent: 0
   languages_other:
   created: Sep 04, 2020
-  updated: Jan 16, 2021
+  updated: Jan 25, 2021
 
 - name: FTC9108-SkyStone
   private: False
@@ -46,5 +33,18 @@ repos:
   languages_other_percent: 0
   languages_other:
   created: Oct 16, 2019
-  updated: Dec 17, 2019
+  updated: Jan 25, 2021
+
+- name: OPS-IncomeVis
+  private: False
+  permalink: https://github.com/codyduong/OPS-IncomeVis
+  description: A data visualization of the income of Olathe Public Schools Employees.
+  languages:
+    - name: Python
+      color: '#3572A5'
+      percent: 100.0
+  languages_other_percent: 0
+  languages_other:
+  created: Jan 23, 2021
+  updated: Jan 25, 2021
 
