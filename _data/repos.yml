@@ -20,10 +20,10 @@ repos:
   languages:
     - name: SCSS
       color: '#c6538c'
-      percent: 56.66
+      percent: 56.68
     - name: HTML
       color: '#e34c26'
-      percent: 34.59
+      percent: 34.57
     - name: Ruby
       color: '#701516'
       percent: 7.92
@@ -33,7 +33,7 @@ repos:
   languages_other_percent: 0
   languages_other:
   created: Sep 04, 2020
-  updated: Jan 26, 2021
+  updated: Feb 01, 2021
 
 - name: FTC9108-SkyStone
   private: False
@@ -46,7 +46,7 @@ repos:
   languages_other_percent: 0
   languages_other:
   created: Oct 16, 2019
-  updated: Jan 25, 2021
+  updated: Jan 28, 2021
 
 - name: OPS-IncomeVis
   private: False
@@ -59,5 +59,24 @@ repos:
   languages_other_percent: 0
   languages_other:
   created: Jan 23, 2021
-  updated: Jan 26, 2021
+  updated: Jan 31, 2021
+
+- name: ProjectEuler-Practice
+  private: False
+  permalink: https://github.com/codyduong/ProjectEuler-Practice
+  description: Practicing code algorithm implementation in multiple languages.
+  languages:
+    - name: Python
+      color: '#3572A5'
+      percent: 60.36
+    - name: JavaScript
+      color: '#f1e05a'
+      percent: 19.98
+    - name: TypeScript
+      color: '#2b7489'
+      percent: 19.66
+  languages_other_percent: 0
+  languages_other:
+  created: Nov 02, 2020
+  updated: Feb 01, 2021
 
