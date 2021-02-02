@@ -66,15 +66,3 @@ layout: default
     </div>
     </div>
 </article>
-
-
-<script>
-    const { Octokit } = require("@octokit/rest");
-    const octokit = new Octokit({
-        auth: "{{site.data.auth.token}}",
-        userAgent: "artNcode",
-        timeZone: 'America/Chicago' //https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-    })
-    
-    //idk the plan here is hopefully to automatically update repo information. But I have no idea what im doing...
-</script>
