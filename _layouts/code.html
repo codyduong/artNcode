@@ -1,5 +1,6 @@
 ---
 layout: default
+ts: repoUpdate.ts
 ---
 <article class="post">
     <header class="post-header">
@@ -40,27 +41,34 @@ layout: default
                 {% for lang in repo.languages %}
                 {% if lang.percent != '0%' %}
                 <span title="{{lang.name}} {{lang.percent | append: '%'}}" id="{{lang.name}}">
-                    <div style="background-color: {{lang.color | escape}}; height: 100%; width: {{lang.percent | append: '%'}}; display: inline-block" id="{{lang.name | append: '_bar'}}">
+                    <div style="background-color: {{lang.color | escape}}; height: 100%; width: {{lang.percent | append: '%'}}; display: inline-block"
+                        id="{{repo.name | append: lang.name}}">
                     </div>
                 </span>
                 {% endif %}
                 {% endfor %}
                 <span title="Other {{repo.languages_other_percent | append: '%'}}" id="other">
-                    <div style="background-color: white; height: 100%; width: {{repo.languages_other_percent | append: '%'}}; display: inline-block" id="other_bar">
+                    <div style="background-color: white; height: 100%; width: {{repo.languages_other_percent | append: '%'}}; display: inline-block"
+                        id="{{repo.name | append: lang.name}}">
                     </div>
                 </span>
             </div>
             <div>
-                <br>
-                {{repo.description}} <br>
-                <br>
-                Updated on: {{repo.updated}}<br>
+                {{repo.description}}
+                <br></br>
+                <br></br>
+                Updated on: {{repo.updated}}<br></br>
                 Created on: {{repo.created}}
-                <br>
-                <br>
-                <br>
+                <br></br>
+                <br></br>
+                <br></br>
             </div>
         </div>
+        {% for tsjs in page.ts %}
+        <script>
+            {% include {{ ts }} %}
+        </script>
+        {% endfor %}
         {% endfor %}
     </div>
     </div>
