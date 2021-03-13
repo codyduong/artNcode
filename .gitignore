@@ -5,3 +5,5 @@ _site
 vendor
 _data\auth.yml
 _data/auth.yml
+assets/bundle.js
+node_modules

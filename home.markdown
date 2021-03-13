@@ -9,8 +9,8 @@ Welcome. Here I host my personal and professional work. I'm a self-taught progra
 a 3D Printing, Digital Art, and 3D modelling hobbyist.
 
 
-I hodge-podged this website together using Jekyll and my limited knowledge of HTML, JS, and CSS.
-Something is probably broken...
+I hodge-podged this website together using Jekyll with React put in using Webpack. Please
+don't ask me, it was painful and I'm and idiot.
 
 <u>This website is still under construction.</u>
 
