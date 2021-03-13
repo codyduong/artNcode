@@ -10,7 +10,7 @@ a 3D Printing, Digital Art, and 3D modelling hobbyist.
 
 
 I hodge-podged this website together using Jekyll with React put in using Webpack. Please
-don't ask me, it was painful and I'm and idiot.
+don't ask me, it was painful and I'm an idiot.
 
 <u>This website is still under construction.</u>
 
