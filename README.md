@@ -1,5 +1,4 @@
-Built with jekyll because i couldnt be bothered to style the website myself.
+Built with Jekyll and React yeeted in with Webpack.
 
-Maybe I'll rebuild this but better in react and next.js,
-
-More likely I'll get distracted.
+Why? Because I'm a masochist and refuse to do any styling myself, so I injected React into Jekyll rather than recreate this website from
+the ground up.
