@@ -5,14 +5,14 @@ the ground up.
 
 Development Commands for me:
 
-React Development
+React Development [http://localhost:3000/]
 ```
 $env:NODE_ENV="development"
 npm install --only=dev
 npm start
 ```
 
-Production (webpacking and Jekyll Build)
+Production (Webpacking and Jekyll Build) [http://localhost:4000/]
 ```
 $env:NODE_ENV="production"
 npm install --only=prod
