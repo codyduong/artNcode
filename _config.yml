@@ -46,7 +46,8 @@ plugins:
 #
 exclude: 
   - node_modules/
-  - public/ #this is for React App Testing
+  - public/ #React stuff
+  - src/ #Ditto
   # - react_dev.md
 
 # exclude:
