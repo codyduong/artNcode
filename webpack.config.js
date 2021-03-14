@@ -2,6 +2,7 @@ module.exports = {
   // webpack folder’s entry js — excluded from jekll’s build process.
   entry: {
     cubes: './webpack/cubes.js',
+    cubes2: './webpack/cubes2.js',
     rocketdev: './webpack/rocket.js',
   },
   output: {
