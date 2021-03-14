@@ -1,9 +1,13 @@
 {
-  "name": "artncode",
+  "name": "artncode-react-sandbox",
   "version": "1.0.0",
   "description": "My personal website",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -14,12 +18,26 @@
   "bugs": {
     "url": "https://github.com/codyduong/artNcode/issues"
   },
-  "homepage": "https://github.com/codyduong/artNcode#readme",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
+    "cannon-es": "^0.17.0",
+    "chokidar": "^3.5.1",
+    "nice-color-palettes": "^3.0.0",
+    "react": "^17.0.1",
+    "react-addons-update": "^15.6.3",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.3",
+    "react-three-fiber": "^5.3.19",
+    "three": "^0.126.1",
+    "webpack": "^4.44.2"
+  },
+  "dependencies": {
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
     "@babel/preset-react": "^7.12.13",
-    "babel-loader": "^8.2.2",
+    "babel-loader": "8.1.0",
     "cannon-es": "^0.17.0",
     "nice-color-palettes": "^3.0.0",
     "react": "^17.0.1",
@@ -27,7 +45,25 @@
     "react-dom": "^17.0.1",
     "react-three-fiber": "^5.3.19",
     "three": "^0.126.1",
-    "webpack": "^5.25.0",
+    "webpack": "^4.44.2",
     "webpack-cli": "^4.5.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

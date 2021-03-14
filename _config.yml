@@ -46,6 +46,7 @@ plugins:
 #
 exclude: 
   - node_modules/
+  - public/ #this is for React App Testing
   # - react_dev.md
 
 # exclude:

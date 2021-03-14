@@ -1,15 +1,15 @@
 module.exports = {
   // webpack folder’s entry js — excluded from jekll’s build process.
   entry: {
-    // cubes: './webpack/cubes.js',
-    // cubes2: './webpack/cubes2.js',
-    cubes3: './webpack/cubes3.js',
-    rocketdev: './webpack/rocket.js',
+    // cubes: './src/cubes.js',
+    // cubes2: './src/cubes2.js',
+    cubes3: './src/cubes3.js',
+    rocketdev: './src/rocket.js',
   },
   output: {
-    path: __dirname + "assets/javascripts/",
+    path: __dirname + "/assets/javascripts/",
     filename: "[name].js",
-    publicPath: __dirname + "assets/javascripts/"
+    publicPath: __dirname + "/assets/javascripts/"
   },
   module: {
     rules: [

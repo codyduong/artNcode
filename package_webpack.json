@@ -1,0 +1,33 @@
+{
+  "name": "artncode",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codyduong/artNcode.git"
+  },
+  "author": "Cody Duong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codyduong/artNcode/issues"
+  },
+  "homepage": "https://github.com/codyduong/artNcode#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "cannon-es": "^0.17.0",
+    "nice-color-palettes": "^3.0.0",
+    "react": "^17.0.1",
+    "react-addons-update": "^15.6.3",
+    "react-dom": "^17.0.1",
+    "react-three-fiber": "^5.3.19",
+    "three": "^0.126.1",
+    "webpack": "^5.25.0",
+    "webpack-cli": "^4.5.0"
+  }
+}

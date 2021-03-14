@@ -4,7 +4,18 @@ Why? Because I'm a masochist and refuse to do any styling myself, so I injected 
 the ground up.
 
 Development Commands for me:
+
+React Development
 ```
-webpack -o assets/javascript
+$env:NODE_ENV="development"
+npm install --only=dev
+npm start
+```
+
+Production (webpacking and Jekyll Build)
+```
+$env:NODE_ENV="production"
+npm install --only=prod
+webpack
 bundle exec jekyll serve
 ```
