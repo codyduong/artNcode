@@ -46,6 +46,8 @@ plugins:
 #
 exclude: 
   - node_modules/
+  # - react_dev.md
+
 # exclude:
 #   - .sass-cache/
 #   - .jekyll-cache/
