@@ -1,6 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+//This file is purely for testing ReactDev, should never be webpacked
 import './index.css';
-import App from './App'
+import App from './react_dev'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+//ReactDOM.render(<App />, document.getElementById('root'))
