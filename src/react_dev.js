@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'
 import React, { 
   useRef,
-  useMemo 
+  useUpdate
 } from 'react'
 import { 
   Canvas, 
@@ -18,6 +18,7 @@ import {
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import rocket from './f9rocket.gltf'
+import * as THREE from 'three'
 
 extend({ OrbitControls })
 
@@ -50,22 +51,48 @@ function Cube(props) {
 
 function Rocket(props) {
   const gltf = useLoader(GLTFLoader, rocket)
-  return {gltf} ? <primitive object={gltf.scene} /> : null
-  // const gltf = useLoader(GLTFLoader, rocket)
-  // const { nodes, material } = useLoader(GLTFLoader, rocket)
-  // gltf.scene.children.forEach((mesh, i) => {
-  //   mesh.castShadow = true;
+
+  gltf.scene.traverse(function (node) {
+    if (node.isMesh) { node.castShadow = true; }
+  });
+
+  return {gltf} ? <primitive object={gltf.scene} position={[0,-15,0]} rotation={[0,0,0]}/> : null
+  // I have no fucking clue how to do this.
+  // const model = useRef()
+  // const {nodes} = useLoader(GLTFLoader, rocket)
+
+  // useFrame(state => {
+  //   //rawket.current.rotation += 0.1
   // })
-  // gltf.castShadow = true;
-  // gltf.scene.castShadow = true;
 
   // return (
-  //   <mesh castShadow>
-  //     <bufferGeometry attach="geometry" {...nodes} />
-  //     <meshStandardMaterial attach="material" {...material} />
+  //   <mesh ref={model}>
+  //     <bufferGeometry dispose={false} attach="geometry" {...nodes.geometry} />
+  //     <meshBasicMaterial attach="material" />
   //   </mesh>
-  // );
+  // )
 }
+
+//HERE IS HOW WE DO IMPERATIVE FUCKERY GOD FUCKING DAMNIT: https://github.com/pmndrs/react-three-fiber/blob/master/markdown/api.md#useUpdate
+//Hours and hours down the drain, cause other answers are bad.
+// function FuckSpotLights(props) {
+//   const light = useUpdate(
+//     (self) => {
+//       self.lookAt(0,-10,0)
+//     }
+//   )
+//   return (
+//     <spotLight
+//       position={[40, -5, 40]}
+//       angle={0.3}
+//       penumbra={1}
+//       intensity={2}
+//       castShadow
+//       shadow-camera-far={150}
+//       power={10}
+//     />
+//   )
+// }
 
 
 export default function App() {
@@ -73,9 +100,17 @@ export default function App() {
     <Canvas shadowMap style={{ background: '#272730' }}>
       {/* <color attach="background" args={['lightblue']} /> */}
       <hemisphereLight intensity={0.35} />
-      <spotLight position={[10, 10, 10]} angle={0.3} penumbra={1} intensity={2} castShadow />
+      <spotLight
+        position={[40, -5, 40]}
+        angle={0.3}
+        penumbra={1}
+        intensity={2}
+        castShadow
+        shadow-camera-far={150}
+        power={10}
+      />
       <Physics>
-        <Ground />
+        <Ground position={[0,-15,0]}/>
         {/* <Cube position={[0, 2, 0]}/> 
         <Cube position={[0, 3, 1]}/> 
         <Cube position={[1, 4, 0]}/> 
