@@ -20,3 +20,10 @@ npm install --only=prod
 webpack
 bundle exec jekyll serve
 ```
+
+# gltfjsx
+https://github.com/pmndrs/gltfjsx
+
+God bless this repo, saves me the hassle with gltf files.
+
+For the import, have to manually change: https://stackoverflow.com/questions/65950660/importing-usegltf-from-react-three-drei-usegltf-cause-module-not-found

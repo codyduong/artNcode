@@ -19,6 +19,8 @@
     "url": "https://github.com/codyduong/artNcode/issues"
   },
   "devDependencies": {
+    "@react-three/cannon": "^0.6.1",
+    "@react-three/drei": "^3.11.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
@@ -37,6 +39,7 @@
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
     "@babel/preset-react": "^7.12.13",
+    "@react-three/cannon": "^0.6.1",
     "babel-loader": "8.1.0",
     "cannon-es": "^0.17.0",
     "nice-color-palettes": "^3.0.0",
