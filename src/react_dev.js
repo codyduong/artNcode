@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom'
 import React, { 
   useRef,
-  useUpdate
 } from 'react'
 import { 
   Canvas, 
@@ -18,7 +17,6 @@ import {
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import rocket from './f9rocket.gltf'
-import * as THREE from 'three'
 
 extend({ OrbitControls })
 
@@ -49,14 +47,27 @@ function Cube(props) {
   )
 }
 
+
+//https://github.com/pmndrs/react-three-fiber/discussions/419
 function Rocket(props) {
+  const primitive = useRef();
   const gltf = useLoader(GLTFLoader, rocket)
+
+  useFrame(() => {
+    primitive.current.rotation.x += .01
+    primitive.current.rotation.z += .015
+    primitive.current.position.x = Math.sin(primitive.current.rotation.y)*5
+    primitive.current.position.y = Math.cos(primitive.current.rotation.x)*5
+  })
 
   gltf.scene.traverse(function (node) {
     if (node.isMesh) { node.castShadow = true; }
   });
 
-  return {gltf} ? <primitive object={gltf.scene} position={[0,-15,0]} rotation={[0,0,0]}/> : null
+  return {gltf} ? (
+      <primitive ref={primitive} object={gltf.scene} position={[0,-15,0]} rotation={[0,0,0]} dispose={null}/> 
+    ) : null
+      
   // I have no fucking clue how to do this.
   // const model = useRef()
   // const {nodes} = useLoader(GLTFLoader, rocket)
@@ -95,20 +106,31 @@ function Rocket(props) {
 // }
 
 
+//idk
+//https://github.com/pmndrs/react-three-fiber/blob/master/markdown/recipes.md
+//There under managing imperative code
+function SpotLight(props) {
+  return (
+    <spotLight
+      position={[40, -5, 40]}
+      angle={0.3}
+      penumbra={1}
+      intensity={2}
+      castShadow
+      shadow-camera-far={150}
+      power={10}
+      props
+    />
+  )
+}
+
+
 export default function App() {
   return (
     <Canvas shadowMap style={{ background: '#272730' }}>
       {/* <color attach="background" args={['lightblue']} /> */}
       <hemisphereLight intensity={0.35} />
-      <spotLight
-        position={[40, -5, 40]}
-        angle={0.3}
-        penumbra={1}
-        intensity={2}
-        castShadow
-        shadow-camera-far={150}
-        power={10}
-      />
+      <SpotLight />
       <Physics>
         <Ground position={[0,-15,0]}/>
         {/* <Cube position={[0, 2, 0]}/> 
