@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
-import ExampleRepo from './RepoFlex';
+import RepoFlex from './RepoFlex';
 
 class App extends Component {
   state = {
     repos: [
       {
         'name': 'lol',
-        'job': 'lol',
+        'description': 'lol',
+        'link': 'http://localhost:3000/',
+        'languages': [
+          ['python',50,'#3572A5'],
+          ['js',50,'#f1e05a'],
+        ]
       },
       {
         'name': 'lol2',
-        'job': 'lol2',
+        'description': 'lol2',
+        'link': '',
       },
       {
         'name': 'lol3',
-        'job': 'lol3',
+        'description': 'lol3',
+        'link': '',
       },
     ]
   };
@@ -37,8 +44,8 @@ class App extends Component {
     const { repos } = this.state;
 
     return (
-      <div className="container">
-        <ExampleRepo 
+      <div style={{width: "50vw", marginLeft:"auto", marginRight:"auto"}}>
+        <RepoFlex 
           repoData={repos}
         />
       </div>
