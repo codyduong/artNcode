@@ -40,8 +40,6 @@ const RepoFlex = (props) => {
             {row.description}
             <br></br>
             <br></br>
-            Updated on: <br></br>
-            Created on: <br></br>
             <br></br>
             <LangBar languages={row.languages}/>
             <br></br>

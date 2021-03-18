@@ -6,11 +6,13 @@ class App extends Component {
     repos: [
       {
         'name': 'lol',
-        'description': 'lol',
+        'description': 'Lorem ipsum dolor sit amet, mei an deseruisse elaboraret. Duo id duis vitae persius, vix ad alii etiam. Mel et alia reprimique honestatis. Illum atomorum ullamcorper nec eu, et duo corrumpit voluptatum.',
         'link': 'http://localhost:3000/',
         'languages': [
-          ['python',50,'#3572A5'],
-          ['js',50,'#f1e05a'],
+          ['Python',33,'#3572A5'],
+          ['Javascript',33,'#f1e05a'],
+          ['Typescript',14,'#ff15ff'],
+          ['C',20,'#ccc000'],
         ]
       },
       {
@@ -44,7 +46,7 @@ class App extends Component {
     const { repos } = this.state;
 
     return (
-      <div style={{width: "50vw", marginLeft:"auto", marginRight:"auto"}}>
+      <div style={{width: "100vw", marginLeft:"auto", marginRight:"auto"}}>
         <RepoFlex 
           repoData={repos}
         />
