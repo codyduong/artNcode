@@ -4,7 +4,7 @@ module.exports = {
     // cubes: './src/examples/cubes.js',
     // cubes2: './src/examples/cubes2.js',
     cubes3: './src/examples/cubes3.js',
-    RepoDisplay: '.src/code/RepoDisplay.js'
+    RepoDisplay: './src/code/RepoDisplay.js'
   },
   output: {
     path: __dirname + "/assets/javascripts/",
@@ -24,6 +24,7 @@ module.exports = {
           plugins: [
             "@babel/plugin-proposal-class-properties"
           ]
+        }
       }
     ]
   },
