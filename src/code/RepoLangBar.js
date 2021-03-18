@@ -10,7 +10,7 @@ const flexContainerStyle = {
 
 const HiddenLangBar = (props) => {
   const HiddenLangBar = props.languages?.map((row) => {
-    const width = row[1].toString()+'%'
+    const id = row[0] + "hidden"
     const color = row[2]
     const dotStyle = {
       height: "10px",
@@ -21,7 +21,7 @@ const HiddenLangBar = (props) => {
     }
 
     return(
-      <div style={{padding: "1%"}}>
+      <div style={{padding: "1%"}} key={id}>
         <div style={dotStyle}></div><div style={{display: "inline-block", paddingLeft: "5px"}}>{row[0]}</div>
       </div>
     )

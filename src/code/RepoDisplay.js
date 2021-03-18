@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import RepoFlex from './RepoFlex';
 
 class App extends Component {
@@ -25,6 +26,11 @@ class App extends Component {
         'description': 'lol3',
         'link': '',
       },
+      {
+        'name': 'lol4',
+        'description': 'lol4',
+        'link': '',
+      },
     ]
   };
 
@@ -46,7 +52,7 @@ class App extends Component {
     const { repos } = this.state;
 
     return (
-      <div style={{width: "100vw", marginLeft:"auto", marginRight:"auto"}}>
+      <div style={{width: "100%", marginLeft:"auto", marginRight:"auto"}}>
         <RepoFlex 
           repoData={repos}
         />
@@ -56,4 +62,5 @@ class App extends Component {
   }
 }
 
+ReactDOM.render(<App/> ,document.getElementById('root'))
 export default App;
