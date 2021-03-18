@@ -9,7 +9,7 @@ const flexContainerStyle = {
 }
 
 const HiddenLangBar = (props) => {
-  const HiddenLangBar = props.languages?.map((row) => {
+  const hiddenLangBar = props.languages?.map((row) => {
     const id = row[0] + "hidden"
     const color = row[2]
     const dotStyle = {
@@ -27,11 +27,11 @@ const HiddenLangBar = (props) => {
     )
   }) ?? null
   
-  return <div style={flexContainerStyle}>{HiddenLangBar}</div>
+  return <div style={flexContainerStyle}>{hiddenLangBar}</div>
 }
 
 //STYLING for LangBar
-const OuterStyle = {
+const outerStyle = {
   width: "100%", 
   height: "15px", 
   display: "block", 
@@ -44,7 +44,7 @@ const OuterStyle = {
 const LangBar = (props) => {
   const [shown, setShown] = useState(false);
 
-  const LangBar = props.languages?.map((row) => {
+  const langBar = props.languages?.map((row) => {
     const width = row[1].toString()+'%'
     const color = row[2]
     const barStyle = {
@@ -55,21 +55,17 @@ const LangBar = (props) => {
     }
 
     return(
-      // <span title={row[0]} key={row[0]}>
-      //   <div style={barStyle}>
-      //   </div>
-      // </span>
       <div style={barStyle} key={row[0]}></div>
     )
   }) ?? null
 
-  return LangBar ? (
+  return langBar ? (
     <div
       onMouseEnter={() => setShown(true)}
       onMouseLeave={() => setShown(false)}
     >
-      <div style={OuterStyle}>
-        {LangBar}
+      <div style={outerStyle}>
+        {langBar}
       </div>
       {shown && (<HiddenLangBar {...props}/>)}
     </div>
@@ -77,9 +73,3 @@ const LangBar = (props) => {
 }
 
 export default LangBar;
-
-{/* <span title="{{lang.name}} {{lang.percent | append: '%'}}" id="{{lang.name}}">
-  <div style="background-color: {{lang.color | escape}}; height: 100%; width: {{lang.percent | append: '%'}}; display: inline-block"
-    id="{{repo.name | append: lang.name}}">
-  </div>
-</span> */}
