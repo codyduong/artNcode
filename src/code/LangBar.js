@@ -10,7 +10,7 @@ const flexContainerStyle = {
 
 const HiddenLangBar = (props) => {
   const HiddenLangBar = props.languages?.map((row) => {
-    const id = row[0] + "hidden"
+    const width = row[1].toString()+'%'
     const color = row[2]
     const dotStyle = {
       height: "10px",
@@ -21,7 +21,7 @@ const HiddenLangBar = (props) => {
     }
 
     return(
-      <div style={{padding: "1%"}} key={id}>
+      <div style={{padding: "1%"}}>
         <div style={dotStyle}></div><div style={{display: "inline-block", paddingLeft: "5px"}}>{row[0]}</div>
       </div>
     )
@@ -77,3 +77,9 @@ const LangBar = (props) => {
 }
 
 export default LangBar;
+
+{/* <span title="{{lang.name}} {{lang.percent | append: '%'}}" id="{{lang.name}}">
+  <div style="background-color: {{lang.color | escape}}; height: 100%; width: {{lang.percent | append: '%'}}; display: inline-block"
+    id="{{repo.name | append: lang.name}}">
+  </div>
+</span> */}

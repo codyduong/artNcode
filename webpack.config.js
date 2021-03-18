@@ -3,10 +3,7 @@ module.exports = {
   entry: {
     // cubes: './src/examples/cubes.js',
     // cubes2: './src/examples/cubes2.js',
-    //cubes3: './src/examples/cubes3.js',
-    RepoDisplay: './src/code/RepoDisplay',
-    RepoFlex: './src/code/RepoFlex',
-    RepoLangBar: './src/code/RepoLangBar',
+    cubes3: './src/examples/cubes3.js',
   },
   output: {
     path: __dirname + "/assets/javascripts/",
@@ -20,12 +17,7 @@ module.exports = {
         exclude: /(node_modules)/,
         loader: 'babel-loader',
         options: {
-          presets: [
-            '@babel/react', '@babel/preset-env'
-          ],
-          plugins: [
-            "@babel/plugin-proposal-class-properties"
-          ]
+          presets: ['@babel/react', '@babel/preset-env']
         }
       }
     ]
