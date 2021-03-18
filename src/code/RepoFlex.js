@@ -9,19 +9,21 @@ const RepoFlex = (props) => {
   }
 
   const repoOuter = {
-    width: "48%",
+    width: "calc(50% - 10px)",
     height: "100%",
-    borderRadius: "25px",
-    border: "2px solid #777777",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    padding: "5px",
+    padding: "5px 0px 5px 0px",
     margin: "5px"
   }
 
   const repoInner = {
-    width: "90%",
+    width: "100%",
+    height: "100%",
+    borderRadius: "25px",
+    border: "2px solid #777777",
+    padding: "10px"
   }
 
   const repositoryFlex = props.repoData.map((row, index) => {
