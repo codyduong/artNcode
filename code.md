@@ -8,4 +8,4 @@ Welcome to the code page. I am most familiar with LUA, <a href="https://roblox.g
 I then decided I wanted a website, so I learned all the technologies for it. This website is built using Jekyll with React in various places.
 
 
-<h3> Project Showcase </h3>
+<h3> Repository Showcase </h3>
