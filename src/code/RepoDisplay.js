@@ -12,8 +12,8 @@ class App extends Component {
         'languages': [
           ['Python',33,'#3572A5'],
           ['Javascript',33,'#f1e05a'],
-          ['Typescript',14,'#ff15ff'],
-          ['C',20,'#ccc000'],
+          ['Typescript',20,'#2b7489'],
+          ['HTML',14,'#e34c26'],
         ]
       },
       {
@@ -57,7 +57,6 @@ class App extends Component {
           repoData={repos}
         />
       </div>
-      
     );
   }
 }

@@ -34,9 +34,7 @@ const RepoFlex = (props) => {
           {row.description}
           <br></br>
           <br></br>
-          <br></br>
           <LangBar languages={row.languages} />
-          <br></br>
         </div>
       </div>
     )

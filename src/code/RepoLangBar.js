@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useSpring, animated} from 'react-spring'
 
 //STYLING for HiddenLangBar
 const flexContainerStyle = {
@@ -22,12 +23,19 @@ const HiddenLangBar = (props) => {
 
     return(
       <div style={{padding: "1%"}} key={id}>
-        <div style={dotStyle}></div><div style={{display: "inline-block", paddingLeft: "5px"}}>{row[0]}</div>
+        <div style={dotStyle}></div><div style={{display: "inline-block", paddingLeft: "5px"}}>
+          {row[0]}
+          <span style={{color:'#919191', fontSize: '12px'}}> {row[1]}%</span>
+        </div>
       </div>
     )
   }) ?? null
-  
-  return <div style={flexContainerStyle}>{hiddenLangBar}</div>
+
+  return (
+    <div style={flexContainerStyle}>
+      {hiddenLangBar}
+    </div>
+  )
 }
 
 //STYLING for LangBar
@@ -42,7 +50,7 @@ const outerStyle = {
 }
 
 const LangBar = (props) => {
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(null);
 
   const langBar = props.languages?.map((row) => {
     const width = row[1].toString()+'%'
@@ -51,13 +59,37 @@ const LangBar = (props) => {
       display: "inline-block", 
       height: "100%", 
       width: width,
-      backgroundColor: color
+      backgroundColor: color,
+      //spacing of langs
+      position: 'relative',
+      left: '-2px',
+      margin: '0px 2px 0px 2px'
     }
 
     return(
       <div style={barStyle} key={row[0]}></div>
     )
   }) ?? null
+
+  const animateIn = useSpring({ 
+    position: 'relative',
+    top: '-30px', 
+    opacity: 0,
+    height: '0px',
+    from: { top: '0px', opacity:1, height:'40px'}, 
+    reset: true,
+    zIndex: -1,
+  })
+
+  const animateOut = useSpring({ 
+    position: 'relative',
+    top: '0px', 
+    opacity: 1,
+    height: '40px',
+    from: { top: '-30px', opacity:0, height:'0px'}, 
+    reset: true,
+    zIndex: -1,
+  })
 
   return langBar ? (
     <div
@@ -67,7 +99,16 @@ const LangBar = (props) => {
       <div style={outerStyle}>
         {langBar}
       </div>
-      {shown && (<HiddenLangBar {...props}/>)}
+      {(shown == false) && (
+        <animated.div style={animateIn}>
+          <HiddenLangBar {...props}/>
+        </animated.div>
+      )}
+      {shown && (
+        <animated.div style={animateOut}>
+          <HiddenLangBar {...props}/>
+        </animated.div>
+      )}
     </div>
   ) : null
 }
