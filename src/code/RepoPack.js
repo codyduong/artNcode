@@ -65,7 +65,7 @@ function handleLangs(repos) {
         console.log(error)
       })
       .then(() => {
-        //console.log(finalRepo)
+        console.log(finalRepo)
         writeFile(finalRepo)
       })
   }
