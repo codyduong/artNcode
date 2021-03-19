@@ -18,6 +18,7 @@ but not the React (unless you want to webpack it each time, ~10 seconds per pack
 $env:NODE_ENV="production"
 npm install --only=prod
 webpack
+node 'src/code/RepoPack.js' --o='./src/code/'
 bundle exec jekyll serve
 ```
 
