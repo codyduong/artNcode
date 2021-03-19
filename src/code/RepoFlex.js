@@ -9,13 +9,13 @@ const RepoFlex = (props) => {
   }
 
   const repoOuter = {
-    width: "calc(50% - 10px)",
+    width: "calc(50% - 40px)",
     height: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     padding: "5px 0px 5px 0px",
-    margin: "5px"
+    margin: "10px"
   }
 
   const repoInner = {
@@ -34,7 +34,9 @@ const RepoFlex = (props) => {
           {row.description}
           <br></br>
           <br></br>
-          <LangBar languages_url={row.languages_url} />
+          <div style={{width: '100%', marginLeft:"auto", marginRight:"auto"}}>
+            <LangBar languages_url={row.languages_url} />
+          </div>
         </div>
       </div>
     )

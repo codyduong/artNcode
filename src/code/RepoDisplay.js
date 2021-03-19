@@ -12,7 +12,7 @@ class App extends Component {
     const { repos } = this.state;
 
     return (
-      <div style={{width: "100%", marginLeft:"auto", marginRight:"auto"}}>
+      <div style={{width: "66%", marginLeft:"auto", marginRight:"auto"}}>
         <RepoFlex 
           repoData={repos}
         />
