@@ -34,21 +34,21 @@ fetch('https://api.github.com/users/codyduong/repos', fetch2)
     }
   )
 
-function handleLangs(repos) {
+async function handleLangs(repos) {
+
   let finalRepo = []
-  var index
-  for (index in repos) {
-    fetch(repos[index].languages_url, fetch2)
+
+  for await (let repo of repos) {
+    fetch(repo.languages_url, fetch2)
       .then(res => res.json())
       .then((result) => {
         var langList = []
         var langTotal = 0
         var langOther = 0
-        var lang
-        for (lang in result) {
+        for (let lang in result) {
           langTotal += result[lang]
         }
-        for (lang in result) {
+        for (let lang in result) {
           var percent = Math.round((result[lang] / langTotal) * 10000) / 100
           if (percent > MIN_PERCENTAGE_THRESHOLD) {
             langList.push([lang, percent, COLORS[lang] ? COLORS[lang]['color'] : null])
@@ -59,13 +59,12 @@ function handleLangs(repos) {
         if (langOther !== 0) {
           langList.push(['Other', langOther, '#696969']) //haha funny number
         }
-        repos[index]['languages'] = langList
-        finalRepo.push(repos[index])
+        repo['languages'] = langList
+        finalRepo.push(repo)
       }, (error) => {
         console.log(error)
       })
       .then(() => {
-        console.log(finalRepo)
         writeFile(finalRepo)
       })
   }
