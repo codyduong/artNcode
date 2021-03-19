@@ -54,7 +54,6 @@ const outerStyle = {
 
 const LangBar = (props) => {
   const [shown, setShown] = useState(null);
-
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [langs, setLangs] = useState([]);
@@ -111,51 +110,35 @@ const LangBar = (props) => {
     )
   }) ?? null
 
-  const animateIn = useSpring({ 
+  const animate = useSpring({ 
     position: 'relative',
-    top: '-30px', 
-    opacity: 0,
-    height: '0px',
-    from: { top: '0px', opacity:1, height:'40px'}, 
-    reset: true,
-    zIndex: -1,
-    delay: 250,
-  })
-
-  const animateOut = useSpring({ 
-    position: 'relative',
-    top: '0px', 
+    top: '0px',
     opacity: 1,
     height: '40px',
-    from: { top: '-30px', opacity:0, height:'0px'}, 
+    from: { top: '-30px', opacity: 0, height: '0px' },
     reset: true,
     zIndex: -1,
     delay: 250,
+    reverse: !shown,
   })
+
 
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
     return <div>Loading...</div>;
   } else {
-    return langBar ? (
+    return langBar[0] ? (
       <div
-        onMouseEnter={() => shown ? null : setShown(true)}
-        onMouseLeave={() => shown ? setShown(false) : null}
+        onMouseEnter={() => setShown(true)}
+        onMouseLeave={() => setShown(false)}
       >
         <div style={outerStyle}>
           {langBar}
         </div>
-        {(shown === false) && (
-          <animated.div style={animateIn}>
-            <HiddenLangBar languages={langs}/>
-          </animated.div>
-        )}
-        {shown && (
-          <animated.div style={animateOut}>
-            <HiddenLangBar languages={langs}/>
-          </animated.div>
-        )}
+        <animated.div style={animate}>
+          <HiddenLangBar languages={langs} />
+        </animated.div>
       </div>
     ) : null
   }
