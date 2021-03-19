@@ -11,5 +11,5 @@
     "RoReplicate": 4,
     "OPS-IncomeVis": 5
   },
-  "Token": "./token.txt"
+  "Token": "./token.json"
 }

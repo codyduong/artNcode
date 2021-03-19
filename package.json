@@ -45,6 +45,7 @@
     "babel-loader": "8.1.0",
     "cannon-es": "^0.17.0",
     "nice-color-palettes": "^3.0.0",
+    "node-fetch": "^2.6.1",
     "react": "^17.0.1",
     "react-addons-update": "^15.6.3",
     "react-dom": "^17.0.1",

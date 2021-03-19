@@ -14,8 +14,13 @@ const RepoFetch = () => {
       .then(res => res.json())
       .then(
         (result) => {
-          setIsLoaded(true);
-          setItems(result);
+          if (result.message) {
+            setIsLoaded(true);
+            setError(result.message);
+          } else {
+            setIsLoaded(true);
+            setItems(result);
+          }
         },
         (error) => {
           setIsLoaded(true);
