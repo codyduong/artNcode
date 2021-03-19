@@ -99,7 +99,7 @@ const LangBar = (props) => {
       <div style={outerStyle}>
         {langBar}
       </div>
-      {(shown == false) && (
+      {(shown === false) && (
         <animated.div style={animateIn}>
           <HiddenLangBar {...props}/>
         </animated.div>
