@@ -30,11 +30,11 @@ const RepoFlex = (props) => {
     return(
       <div style={repoOuter} key={index}>
         <div style={repoInner}>
-          <h1><a href={row.link} title="Github Repository">{row.name}</a></h1>
+          <h1><a href={row.html_url} title="Github Repository">{row.name}</a></h1>
           {row.description}
           <br></br>
           <br></br>
-          <LangBar languages={row.languages} />
+          <LangBar languages_url={row.languages_url} />
         </div>
       </div>
     )
