@@ -7,3 +7,4 @@ _data\auth.yml
 _data/auth.yml
 assets/bundle.js
 node_modules
+src/code/Token.txt

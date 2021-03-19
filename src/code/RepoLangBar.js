@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {useSpring, animated} from 'react-spring'
 
-const Colors = require('./Colors.json')
-const MIN_PERCENTAGE_THRESHOLD = 2
+const COLORS = require('./Config.json').Colors
+const MIN_PERCENTAGE_THRESHOLD = require('./Config.json').PercentageThreshold
 
 //STYLING for HiddenLangBar
 const flexContainerStyle = {
@@ -56,7 +56,7 @@ const LangBar = (props) => {
   const [shown, setShown] = useState(null);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [langs, setLangs] = useState([]);
+  const [langs, setLangs] = useState(props.languages ?? []);
 
   useEffect(() => {
     fetch(props.languages_url)
@@ -74,7 +74,7 @@ const LangBar = (props) => {
           for (lang in result) {
             var percent = Math.round( (result[lang]/langTotal)*10000 ) / 100
             if (percent > MIN_PERCENTAGE_THRESHOLD) {
-              langList.push([lang, percent, Colors[lang] ? Colors[lang]['color'] : null ])
+              langList.push([lang, percent, COLORS[lang] ? COLORS[lang]['color'] : null ])
             } else {
               langOther += percent
             }
