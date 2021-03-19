@@ -12,7 +12,7 @@ function parseInput() {
   let rv
   rv = (args[0].slice(0,4)==='--o=') ? args[0].slice(4,) : null 
   rv = rv ? rv+'Repos.json' : null
-  console.log("Changed output to " + rv)
+  console.log("Changed output to ${rv}")
   return rv ?? null
 }
 
