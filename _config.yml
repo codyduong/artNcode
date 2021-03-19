@@ -48,7 +48,7 @@ exclude:
   - node_modules/
   - public/ #React stuff
   - src/ #Ditto
-  # - react_dev.md
+  - react_dev.md
 
 # exclude:
 #   - .sass-cache/

@@ -3,7 +3,7 @@ module.exports = {
   entry: {
     // cubes: './src/examples/cubes.js',
     // cubes2: './src/examples/cubes2.js',
-    cubes3: './src/examples/cubes3.js',
+    // cubes3: './src/examples/cubes3.js',
     RepoDisplay: './src/code/RepoDisplay.js'
   },
   output: {

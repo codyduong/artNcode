@@ -12,64 +12,6 @@ layout: default
 </article>
 
 <article class="custom">
-    <div class="post-work">
-        <style>
-            .flex-container {
-                display: flex;
-                flex-flow: column nowrap;
-                /*align-items: center;*/
-                align-content: space-around;
-            }
-
-            .flex-container>div {
-                width: 100%;
-                margin: 0px;
-                text-align: center;
-                max-width: 400px;
-                max-height: 400px;
-            }
-        </style>
-
-        <div class="flex-container" id="repoContainer">
-        </div>
-        {% for repo in site.data.repos.repos %}
-        <div id="{{repo.name}}">
-            <h1><a href="{{repo.permalink}}" title="Github Repository">{{repo.name | escape}}</a></h1>
-            <h3>Languages</h3>
-            <div style="width:100%; height: 15px; display: block; white-space: nowrap; font-size: 0px" id="bar">
-                {% for lang in repo.languages %}
-                {% if lang.percent != '0%' %}
-                <span title="{{lang.name}} {{lang.percent | append: '%'}}" id="{{lang.name}}">
-                    <div style="background-color: {{lang.color | escape}}; height: 100%; width: {{lang.percent | append: '%'}}; display: inline-block"
-                        id="{{repo.name | append: lang.name}}">
-                    </div>
-                </span>
-                {% endif %}
-                {% endfor %}
-                <span title="Other {{repo.languages_other_percent | append: '%'}}" id="other">
-                    <div style="background-color: white; height: 100%; width: {{repo.languages_other_percent | append: '%'}}; display: inline-block"
-                        id="{{repo.name | append: lang.name}}">
-                    </div>
-                </span>
-            </div>
-            <div>
-                {{repo.description}}
-                <br></br>
-                <br></br>
-                Updated on: {{repo.updated}}<br></br>
-                Created on: {{repo.created}}
-                <br></br>
-                <br></br>
-                <br></br>
-            </div>
-        </div>
-        {% for tsjs in page.ts %}
-        <script>
-            {% include {{ ts }} %}
-        </script>
-        {% endfor %}
-        {% endfor %}
-    </div>
-    </div>
-    </div>
+    <div id="root"></div>
+    <script type="text/javascript" src="../assets/javascripts/RepoDisplay.js" charset="utf-8"></script>
 </article>

@@ -9,13 +9,13 @@ const RepoFlex = (props) => {
   }
 
   const repoOuter = {
-    width: "calc(50% - 40px)",
+    width: "calc(100% - 5px)",
     height: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     padding: "5px 0px 5px 0px",
-    margin: "10px"
+    margin: "5px"
   }
 
   const repoInner = {
