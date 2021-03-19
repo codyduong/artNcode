@@ -70,11 +70,10 @@ const LangBar = (props) => {
             var langTotal = 0
             var langOther = 0
             setIsLoaded(true);
-            var lang
-            for (lang in result) {
+            for (let lang in result) {
               langTotal += result[lang]
             }
-            for (lang in result) {
+            for (let lang in result) {
               var percent = Math.round((result[lang] / langTotal) * 10000) / 100
               if (percent > MIN_PERCENTAGE_THRESHOLD) {
                 langList.push([lang, percent, COLORS[lang] ? COLORS[lang]['color'] : null])
