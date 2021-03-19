@@ -56,7 +56,9 @@ const LangBar = (props) => {
   const [shown, setShown] = useState(null);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [langs, setLangs] = useState(props.languages ?? []);
+  const [langs, setLangs] = useState(props.languages ?? []); 
+
+  // props.languages only exists when we fellback from a fetch failure
 
   useEffect(() => {
     if (props.languages === null) {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import RepoFlex from './RepoFlex';
 
-const defRepos = require('./Repos.json') //(require(require('./Config.json').FallbackRepos) ...Nested requires don't work :( 
+const defualtRepos = require('./Repos.json') //(require(require('./Config.json').FallbackRepos) ...Nested requires don't work :( 
 const REPO_URL = require('./Config.json').RepoUrl
 
 const RepoFetch = () => {
@@ -33,7 +33,7 @@ const RepoFetch = () => {
     console.log(error)
     return (
       <RepoFlex 
-        repoData={defRepos}
+        repoData={defualtRepos}
       />
     );
   } else if (!isLoaded) {

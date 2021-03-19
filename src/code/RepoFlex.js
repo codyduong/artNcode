@@ -36,7 +36,7 @@ const RepoFlex = (props) => {
           <br></br>
           <div style={{width: '100%', marginLeft:"auto", marginRight:"auto"}}>
             <LangBar 
-              languages = {row.languages ?? null}
+              languages = {row.languages ?? null} //Only used when RepoFetch fails, and defaults to FallbackRepos (in config) or Repos.js
               languages_url={row.languages_url} 
             />
           </div>
