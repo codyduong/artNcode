@@ -44,6 +44,12 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
+exclude: 
+  - node_modules/
+  - public/ #React stuff
+  - src/ #Ditto
+  - react_dev.md
+
 # exclude:
 #   - .sass-cache/
 #   - .jekyll-cache/

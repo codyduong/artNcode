@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+      <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">
+      {{ content }}
+  </div>
+</article>
+
+<article class="custom">
+  <!--this is aspect ratio height/width, using vw cause padding is broke with r3f Canvas-->
+  <!-- <div id="root_cubes" style="height: 38.5416vw"></div> 
+  <script type="text/javascript" src="../assets/javascripts/cubes.js" charset="utf-8"></script>
+  <div id="root_cubes2" style="height: 38.5416vw"></div>
+  <script type="text/javascript" src="../assets/javascripts/cubes2.js" charset="utf-8"></script>
+  <div id="root_cubes3" style="height: 38.5416vw"></div>
+  <script type="text/javascript" src="../assets/javascripts/cubes3.js" charset="utf-8"></script> -->
+  <div id="root"></div>
+  <script type="text/javascript" src="../assets/javascripts/RepoDisplay.js" charset="utf-8"></script>
+</article>

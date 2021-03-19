@@ -1,5 +1,32 @@
-Built with jekyll because i couldnt be bothered to style the website myself.
+Built with Jekyll and React put in with Webpack.
 
-Maybe I'll rebuild this but better in react and next.js,
+Why? Because I'm a masochist and refuse to do any CSS styling myself. 
+So I smashed React into my Jekyll website with a hammer, and have lots of regret.
 
-More likely I'll get distracted.
+# React Development [http://localhost:3000/]
+This will provide a dynamic local testing space to test React in.
+```
+$env:NODE_ENV="development"
+npm install --only=dev
+npm start
+```
+
+# "Production" (Webpacking and Jekyll Build) [http://localhost:4000/]
+This will provide an environment to change Jekyll in real-time (as well as the overall structure of the website), 
+but not the React (unless you want to webpack it each time, ~10 seconds per pack). 
+```
+$env:NODE_ENV="production"
+npm install --only=prod
+webpack
+bundle exec jekyll serve
+
+//Optional 
+node 'src/code/RepoPack.js' --o='./src/code/'
+```
+
+# gltfjsx
+https://github.com/pmndrs/gltfjsx
+
+God bless this repo, saves me the hassle with gltf files.
+
+For the import, have to manually change: https://stackoverflow.com/questions/65950660/importing-usegltf-from-react-three-drei-usegltf-cause-module-not-found

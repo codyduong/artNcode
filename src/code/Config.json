@@ -1,0 +1,15 @@
+{
+  "RepoUrl": "https://api.github.com/users/codyduong/repos",
+  "PercentageThreshold": 2,
+  "FallbackRepos": "./Repos.json",
+  "Colors": "./Colors.json",
+  "Token": "./token.json",
+  "Whitelist": {
+    "aNc-pyRequest": 0,
+    "artNcode": 1,
+    "FTC9108-SkyStone": 2,
+    "ProjectEuler-Practice": 3,
+    "RoReplicate": 4,
+    "OPS-IncomeVis": 5
+  }
+}
