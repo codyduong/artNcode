@@ -35,7 +35,10 @@ const RepoFlex = (props) => {
           <br></br>
           <br></br>
           <div style={{width: '100%', marginLeft:"auto", marginRight:"auto"}}>
-            <LangBar languages_url={row.languages_url} />
+            <LangBar 
+              languages = {row.languages ?? null}
+              languages_url={row.languages_url} 
+            />
           </div>
         </div>
       </div>

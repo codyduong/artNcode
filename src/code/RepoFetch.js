@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import RepoFlex from './RepoFlex';
 
-const defRepos = require('./Config.json').FallbackRepos
+const defRepos = require('./Repos.json') //(require(require('./Config.json').FallbackRepos) ...Nested requires don't work :( 
 const REPO_URL = require('./Config.json').RepoUrl
 
 const RepoFetch = () => {

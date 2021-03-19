@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useSpring, animated} from 'react-spring'
 
-const COLORS = require('./Config.json').Colors
+const COLORS = require('./Colors.json') //require(require('./Config.json').Colors) ...Nested requires don't work :( 
 const MIN_PERCENTAGE_THRESHOLD = require('./Config.json').PercentageThreshold
 
 //STYLING for HiddenLangBar
@@ -59,36 +59,40 @@ const LangBar = (props) => {
   const [langs, setLangs] = useState(props.languages ?? []);
 
   useEffect(() => {
-    fetch(props.languages_url)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          var langList = []
-          var langTotal = 0
-          var langOther = 0
-          setIsLoaded(true);
-          var lang
-          for (lang in result) {
-            langTotal += result[lang]
-          }
-          for (lang in result) {
-            var percent = Math.round( (result[lang]/langTotal)*10000 ) / 100
-            if (percent > MIN_PERCENTAGE_THRESHOLD) {
-              langList.push([lang, percent, COLORS[lang] ? COLORS[lang]['color'] : null ])
-            } else {
-              langOther += percent
+    if (props.languages === null) {
+      fetch(props.languages_url)
+        .then(res => res.json())
+        .then(
+          (result) => {
+            var langList = []
+            var langTotal = 0
+            var langOther = 0
+            setIsLoaded(true);
+            var lang
+            for (lang in result) {
+              langTotal += result[lang]
             }
+            for (lang in result) {
+              var percent = Math.round((result[lang] / langTotal) * 10000) / 100
+              if (percent > MIN_PERCENTAGE_THRESHOLD) {
+                langList.push([lang, percent, COLORS[lang] ? COLORS[lang]['color'] : null])
+              } else {
+                langOther += percent
+              }
+            }
+            if (langOther !== 0) {
+              langList.push(['Other', langOther, '#696969']) //haha funny number
+            }
+            setLangs(langList);
+          },
+          (error) => {
+            setIsLoaded(true);
+            setError(error);
           }
-          if (langOther !== 0) {
-            langList.push(['Other', langOther, '#696969']) //haha funny number
-          }
-          setLangs(langList);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      )
+        )
+    } else {
+      setIsLoaded(true);
+    }
   }, [])
   
   const langBar = langs.map((row) => {
