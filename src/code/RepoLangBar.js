@@ -125,6 +125,7 @@ const LangBar = (props) => {
     zIndex: -1,
     delay: 250,
     reverse: !shown,
+    overflow: 'hidden'
   })
 
 
