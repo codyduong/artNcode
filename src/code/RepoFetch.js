@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import RepoFlex from './RepoFlex';
+import React, { Suspense, useEffect, useState } from 'react';
 
-const defualtRepos = require('./Repos.json') //(require(require('./Config.json').FallbackRepos) ...Nested requires don't work :( 
+const RepoFlex = React.lazy(() => import('./RepoFlex.js'))
+
+const defaultRepos = require('./Repos.json') //(require(require('./Config.json').FallbackRepos) ...Nested requires don't work :( 
 const REPO_URL = require('./Config.json').RepoUrl
 
 const RepoFetch = () => {
@@ -33,16 +34,18 @@ const RepoFetch = () => {
     console.log(error)
     return (
       <RepoFlex 
-        repoData={defualtRepos}
+        repoData={defaultRepos}
       />
     );
   } else if (!isLoaded) {
     return <div>Loading...</div>;
   } else {
     return (
-      <RepoFlex 
-        repoData={items}
-      />
+      <Suspense fallback={<div>Loading...</div>}>
+        <RepoFlex 
+          repoData={items}
+        />
+      </Suspense>
     );
   }
 }

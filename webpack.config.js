@@ -1,3 +1,5 @@
+const ASSET_PATH = process.env.ASSET_PATH || '/';
+
 module.exports = {
   // webpack folder’s entry js — excluded from jekll’s build process.
   entry: {
@@ -7,9 +9,10 @@ module.exports = {
     RepoDisplay: './src/code/RepoDisplay.js'
   },
   output: {
-    path: __dirname + "/assets/javascripts/",
     filename: "[name].js",
-    publicPath: __dirname + "/assets/javascripts/"
+    chunkFilename: "[name].bundle.js",
+    path: __dirname + "/assets/javascripts/",
+    publicPath: String(ASSET_PATH) + "artNcode/assets/javascripts/",
   },
   module: {
     rules: [
