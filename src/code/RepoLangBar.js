@@ -9,7 +9,8 @@ const flexContainerStyle = {
   display: "flex",
   flexWrap: "wrap", 
   flexDirection: "row",
-  justifyContent: "space-around"
+  justifyContent: "space-around",
+  alignContent: "space-around"
 }
 
 const HiddenLangBar = (props) => {
@@ -26,7 +27,7 @@ const HiddenLangBar = (props) => {
 
     return(
       <div style={{ padding: "1%" }} key={id}>
-        <div style={dotStyle}></div><div style={{ display: "inline-block", paddingLeft: "5px" }}>
+        <div style={dotStyle}></div><div style={{ display: "inline-block", paddingLeft: "5px", fontSize: '14px'}}>
           {row[0]}
           <span style={{ color: '#919191', fontSize: '12px' }}> {row[1]}%</span>
         </div>
@@ -115,19 +116,24 @@ const LangBar = (props) => {
     )
   }) ?? null
 
+  let debounce = false //Fixes reverse animation
+
   const animate = useSpring({ 
-    position: 'relative',
     top: '0px',
     opacity: 1,
-    height: '40px',
-    from: { top: '-30px', opacity: 0, height: '0px' },
-    reset: true,
+    height: '4em',
+    transform: 'translate3d(0,0,0)',
+    reset: false,
     zIndex: -1,
     delay: 250,
     reverse: !shown,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    immediate: debounce,
+    from: { opacity: 0, height: '0em', transform: 'translate3d(0,-30px,0)' },
+    onRest: () => {
+      debounce = !shown ? true : false
+    }
   })
-
 
   if (error) {
     return <div>Error: {error.message}</div>;
