@@ -8,16 +8,6 @@ const RepoFlex = (props) => {
     flexDirection: "row"
   }
 
-  const repoOuter = {
-    width: "calc(100% - 5px)",
-    height: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "5px 0px 5px 0px",
-    margin: "5px"
-  }
-
   const repoInner = {
     width: "100%",
     height: "100%",
@@ -27,7 +17,19 @@ const RepoFlex = (props) => {
   }
 
   const repositoryFlex = props.repoData.map((row, index) => {
-    return(
+    const order = require('./Config.json').Whitelist[row.name] ?? null
+    const display = require('./Config.json').Whitelist[row.name] ? "flex" : null
+
+    const repoOuter = {
+      width: "calc(100% - 5px)",
+      height: "100%",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "5px 0px 5px 0px",
+      margin: "5px",
+      order: order
+    }
+    return display ? (
       <div style={repoOuter} key={index}>
         <div style={repoInner}>
           <h1><a href={row.html_url} title="Github Repository">{row.name}</a></h1>
@@ -42,7 +44,7 @@ const RepoFlex = (props) => {
           </div>
         </div>
       </div>
-    )
+    ) : null
   })
 
   return <div id="repoFlex" style={flexContainerStyle}>{repositoryFlex}</div>
