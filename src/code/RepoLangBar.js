@@ -10,7 +10,7 @@ const flexContainerStyle = {
   flexWrap: "wrap", 
   flexDirection: "row",
   justifyContent: "space-around",
-  alignContent: "space-around"
+  alignContent: "space-around",
 }
 
 const HiddenLangBar = (props) => {
@@ -121,7 +121,6 @@ const LangBar = (props) => {
   const animate = useSpring({ 
     top: '0px',
     opacity: 1,
-    height: '4em',
     transform: 'translate3d(0,0,0)',
     reset: false,
     zIndex: -1,
@@ -129,7 +128,8 @@ const LangBar = (props) => {
     reverse: !shown,
     overflow: 'hidden',
     immediate: debounce,
-    from: { opacity: 0, height: '0em', transform: 'translate3d(0,-30px,0)' },
+    maxHeight: '4em',
+    from: { opacity: 0, maxHeight: '0em', transform: 'translate3d(0,-30px,0)' },
     onRest: () => {
       debounce = !shown ? true : false
     }
