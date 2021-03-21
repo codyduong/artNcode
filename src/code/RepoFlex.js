@@ -9,8 +9,9 @@ const RepoFlex = (props) => {
   }
 
   const repositoryFlex = props.repoData.map((row, index) => {
-    const order = require('./Config.json').Whitelist[row.name] ?? null
-    const display = require('./Config.json').Whitelist[row.name] ? "flex" : null
+    const doesExist = require('./Config.json').Whitelist[row.name]
+    const order = doesExist ? doesExist["Order"] : null
+    const display = doesExist ? "flex" : null
 
     const repoOuter = {
       width: "100%",
@@ -26,6 +27,7 @@ const RepoFlex = (props) => {
     return display ? (
       <div style={repoOuter} key={index}>
         <h1><a href={row.html_url} title="Github Repository">{row.name}</a></h1>
+        {doesExist["Custom"] ?? null}
         {row.description}
         <br></br>
         <br></br>

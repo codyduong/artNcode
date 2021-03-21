@@ -5,11 +5,24 @@
   "Colors": "./Colors.json",
   "Token": "./token.json",
   "Whitelist": {
-    "aNc-pyRequest": 0,
-    "artNcode": 1,
-    "FTC9108-SkyStone": 2,
-    "ProjectEuler-Practice": 3,
-    "RoReplicate": 4,
-    "OPS-IncomeVis": 5
+    "aNc-pyRequest": {
+      "Order": 0,
+      "Custom": null
+    },
+    "artNcode": {
+      "Order": 1
+    },
+    "FTC9108-SkyStone": {
+      "Order": 2
+    },
+    "ProjectEuler-Practice": {
+      "Order": 3
+    },
+    "RoReplicate": {
+      "Order": 4
+    },
+    "OPS-IncomeVis": {
+      "Order": 5
+    }
   }
 }
