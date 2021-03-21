@@ -41,7 +41,7 @@ const RepoFetch = () => {
     return <div>Loading...</div>;
   } else {
     return (
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={}>
         <RepoFlex 
           repoData={items}
         />
