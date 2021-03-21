@@ -21,12 +21,11 @@ const RepoFlex = (props) => {
     const display = require('./Config.json').Whitelist[row.name] ? "flex" : null
 
     const repoOuter = {
-      width: "calc(100% - 5px)",
+      width: "calc(100% - 3.25%)",
       height: "100%",
       justifyContent: "center",
       alignItems: "center",
       padding: "5px 0px 5px 0px",
-      margin: "5px",
       order: order
     }
     return display ? (
