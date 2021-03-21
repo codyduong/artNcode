@@ -8,6 +8,9 @@ module.exports = {
     // cubes3: './src/examples/cubes3.js',
     RepoDisplay: './src/code/RepoDisplay.js'
   },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
+  },
   output: {
     filename: "[name].js",
     chunkFilename: "[name].bundle.js",
@@ -17,18 +20,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(t|j)sx?$/, ///\.jsx?$/,
         exclude: /(node_modules)/,
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            '@babel/react', '@babel/preset-env'
-          ],
-          plugins: [
-            "@babel/plugin-proposal-class-properties"
-          ]
-        }
-      }
+        loader: 'ts-loader', //'babel-loader',
+        // options: {
+        //   presets: [
+        //     '@babel/react', '@babel/preset-env'
+        //   ],
+        //   plugins: [
+        //     "@babel/plugin-proposal-class-properties"
+        //   ]
+        // }
+      },
     ]
   },
   mode: 'production'
