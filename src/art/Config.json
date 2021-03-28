@@ -1,8 +1,0 @@
-{
-    "ArtUrl": "put_url",
-    "FallbackRepos": "./Art.json",
-    "Token": "./token.json",
-    "Whitelist": {
-      "null": 0
-    }
-  }
